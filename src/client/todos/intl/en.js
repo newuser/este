@@ -3,7 +3,7 @@ export default {
   clearAll: 'Clear All',
   emptyList: 'Nothing. Go outside and enjoy world.',
   newTodoPlaceholder: 'What needs to be done?',
-  title: 'Todos',
+  title: 'Tadachi ',
   toCheck: {
     andMuchMore: '... and much more.',
     header: 'Things to Check',

@@ -4,11 +4,16 @@ import React from 'react';
 import {FormattedHTMLMessage} from 'react-intl';
 import {Link} from 'react-router';
 
+
+
 export default class Index extends Component {
 
   static propTypes = {
     msg: React.PropTypes.object.isRequired
   };
+
+
+
 
   render() {
     const {msg: {home: msg}} = this.props;
@@ -20,6 +25,7 @@ export default class Index extends Component {
             <FormattedHTMLMessage message={msg.infoHtml} />{' '}
             <Link to="todos">{msg.todos}</Link>.
           </p>
+          <Griddle results={fakeData}/>
         </div>
       </DocumentTitle>
     );
