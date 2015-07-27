@@ -30,7 +30,9 @@ export default class Header extends Component {
               <li><Link to="students">{header.students}</Link></li>
               <li><Link to="calendar">{header.calendar}</Link></li>
               <li><Link to="me">{header.me}</Link></li>
-              {!viewer &&
+
+              <li><Link to="lessons">{header.day}</Link></li>
+                         {!viewer &&
               <li><Link to="login">{header.login}</Link></li>
               }
             </ul>

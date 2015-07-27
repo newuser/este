@@ -15,21 +15,21 @@ export default class Index extends Component {
     users: React.PropTypes.object.isRequired
   };
 
-  fakeData = [
-    {
-      "Время": "8:00",
-      "Занятие": "вышка",
-      "препод": "Письменный"
-    },
-    {
-      "Время": "9:45",
-      "Занятие": "физика",
-      "препод": "Фейнман"
-    }
-  ];
+
   render() {
     const {actions, msg, users: {viewer: {email}}} = this.props;
-
+    var fakeData = [
+      {
+        "Время": "8:00",
+        "Занятие": "вышка",
+        "препод": "teacher1"
+      },
+      {
+        "Время": "9:45",
+        "Занятие": "физика",
+        "препод": "teacher2"
+      }
+    ];
     return (
       <DocumentTitle title={msg.me.title}>
         <div className="me-page">

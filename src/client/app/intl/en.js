@@ -8,6 +8,7 @@ export default {
     home: 'Home',
     login: 'Login',
     me: 'Profile',
+    day: 'Day', 
     students: 'students',
     calendar: 'calendar',
     todos: 'Todos'

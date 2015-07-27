@@ -10,28 +10,11 @@ export function create(dispatch, validate, msg) {
 
   return {
 
-    showDate(date) {
-      dispatch(actions.showDate);
+    setDate(date) {
+      dispatch(actions.setDate, {date});
 
-      return validateForm(fields)
-        .then(() => validateCredentials(fields))
-        .then(() => dispatch(actions.loginSuccess, fields))
-        .catch(error => {
-          dispatch(actions.loginFail, error);
-          throw error;
-        });
-    },
-    loginSuccess() {},
-    loginFail() {},
+      location.href = '/lessons';
 
-    logout() {
-      // Always reload app on logout for security reasons.
-      location.href = '/';
-    },
-
-    setFormField({target: {name, value}}) {
-      value = value.slice(0, formFieldMaxLength);
-      dispatch(actions.setFormField, {name, value});
     }
 
   };

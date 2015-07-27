@@ -31,7 +31,7 @@ export default class Index extends Component {
           <form>
             <label>Your email</label>
             <input type="text" id="emailInput" ></input>
-            <button class="button button-primary"> {msg.me.save}</button>
+            <button className="button button-primary"> {msg.me.save}</button>
           </form>
 
 

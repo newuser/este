@@ -12,7 +12,7 @@ export default class Footer extends Component {
     const {msg: {app: {footer}}} = this.props;
 
     return (
-      <footer>
+      <footer className={"footer"}>
         <p>
           <FormattedHTMLMessage message={footer.madeByHtml} />
         </p>

@@ -39,15 +39,15 @@ export default class Index extends Component {
     ];
 
     return (
-      <DocumentTitle title="студенты">
+      <DocumentTitle title={msg.students.title}>
         <div className="me-page">
           <Logout {...{actions, msg}} />
 
-          <p> Ваша группа:</p>
+          <p> {msg.students.your_group}</p>
           <br/>
           <Griddle results={fakeData} showFilter={true} useGriddleStyles={false}/>
-          <button>добавить</button>
-          <button>удалить</button>
+          <button className="button button-primary">добавить</button>
+          <button className="button button-alert">удалить</button>
         </div>
 
       </DocumentTitle>

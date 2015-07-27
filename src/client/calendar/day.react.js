@@ -9,23 +9,19 @@ import Griddle from 'griddle-react';
 
 export default class DayComponent extends Component {
 
-  static propTypes = {
-    //actions: React.PropTypes.object.isRequired,
-    //msg: React.PropTypes.object.isRequired
-  }
-
   redirect() {
 
   }
 
   handleClick(date){
 
-    //actions.auth.logout()
+
   }
 
 
 
   render() {
+    const actions = this.props.actions;
     var isWeekEnd = function(date){
       var day = date.getDay();
       return (day == 6) || (day == 0);

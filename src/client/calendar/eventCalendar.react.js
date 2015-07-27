@@ -6,31 +6,34 @@ import requireAuth from '../auth/requireauth.react';
 import {format} from '../intl/store';
 import {Calendar} from 'react-widgets';
 import Griddle from 'griddle-react';
-import EventCalendar from './eventCalendar.react.js';
+import DayComponent from './day.react.js';
 
 @requireAuth
-export default class Index extends Component {
+export default class EventCalendar extends Component {
 
   static propTypes = {
     actions: React.PropTypes.object.isRequired,
     msg: React.PropTypes.object.isRequired
   };
+  constructor() {
+    super();
+    this.currentDay = new Date();
+  }
 
   render() {
     const {actions, msg} = this.props;
 
+    var change = (value) => {
+      this.setState({['value']: value});
+      actions.auth.logout();
+    }
+
     return (
-      <DocumentTitle title={msg.me.title}>
-        <div className="me-page">
-          <Logout {...{actions, msg}} />
 
-          <p> Your schedule</p>
-
-          <EventCalendar {...{actions,msg}} />
-          <br/>
-        </div>
-
-      </DocumentTitle>
+          <Calendar dayComponent={DayComponent}
+                    actions={actions}
+                    value={this.currentDay}
+                    onChange={change}/>
     );
   }
 
