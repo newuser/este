@@ -22,10 +22,10 @@ export default class Index extends Component {
       <DocumentTitle title={msg.title}>
         <div className="home-page">
           <p>
-            <FormattedHTMLMessage message={msg.infoHtml} />{' '}
-            <Link to="todos">{msg.todos}</Link>.
+            Веб-интерфейс для уточнения расписания в зачаточном состоянии.
+            Здесь красивые картинки и улыбающиеся люди . Пока вы можете представить небо и ещё что-то такое.
+
           </p>
-          <Griddle results={fakeData}/>
         </div>
       </DocumentTitle>
     );

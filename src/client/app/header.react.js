@@ -3,6 +3,7 @@ import React from 'react';
 import {FormattedHTMLMessage} from 'react-intl';
 import {Link} from 'react-router';
 
+
 export default class Header extends Component {
 
   static propTypes = {
@@ -14,19 +15,28 @@ export default class Header extends Component {
     const {msg: {app: {header}}, viewer} = this.props;
 
     return (
-      <header>
-        <h1>
-          <FormattedHTMLMessage message={header.h1Html} />
-        </h1>
-        <ul>
-          <li><Link to="home">{header.home}</Link></li>
-          <li><Link to="todos">{header.todos}</Link></li>
-          {/*<li><Link to="examples">{header.examples}</Link></li>*/}
-          <li><Link to="me">{header.me}</Link></li>
-          {!viewer &&
-            <li><Link to="login">{header.login}</Link></li>
-          }
-        </ul>
+      <header >
+        <div class="row">
+          <div class="one-third column">
+            <h1>
+              <FormattedHTMLMessage message={header.h1Html}/>
+            </h1>
+          </div>
+          <div class="two-thirds column">
+            <ul>
+              <li><Link to="home">{header.home}</Link></li>
+              {/*<li><Link to="todos">{header.todos}</Link></li>*/}
+              {/*<li><Link to="examples">{header.examples}</Link></li>*/}
+              <li><Link to="students">{header.students}</Link></li>
+              <li><Link to="calendar">{header.calendar}</Link></li>
+              <li><Link to="me">{header.me}</Link></li>
+              {!viewer &&
+              <li><Link to="login">{header.login}</Link></li>
+              }
+            </ul>
+          </div>
+
+        </div>
       </header>
     );
   }

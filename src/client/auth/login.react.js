@@ -25,7 +25,7 @@ export default class Login extends Component {
   redirectAfterLogin() {
     const {router} = this.props;
     const nextPath = router.getCurrentQuery().nextPath;
-    router.replaceWith(nextPath || 'home');
+    router.replaceWith(nextPath || 'me');
   }
 
   render() {

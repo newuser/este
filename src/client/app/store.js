@@ -4,6 +4,7 @@ import authStore from '../auth/store';
 import intlStore from '../intl/store';
 import todosStore from '../todos/store';
 import usersStore from '../users/store';
+import lessonsStore from '../lessons/store';
 
 export default function(state, action, payload) {
   // Create immutable from JSON asap to prevent side effects accidents.

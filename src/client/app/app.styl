@@ -1,6 +1,7 @@
 // Remember to use rems and ems. http://css-tricks.com/rems-ems.
 
 @import '../../../node_modules/normalize.css/normalize.css'
+@import './skeleton.css'
 
 // http://phonegap-tips.com/articles/essential-phonegap-css-webkit-tap-highlight-color.html
 *
@@ -28,8 +29,10 @@ body {
     h1
       margin-bottom 0
     ul
+      display inline
       li
         font-size 1em
+
 
   > footer
     font-size .75em
@@ -48,27 +51,26 @@ body {
     &.active
       font-weight bold
 
-  button
-    border none
-    border-radius 0.3em
-    font-weight bold
-    line-height 1.3
-    font-size 1.5em
+  /*button*/
+    /*border-radius 0.3em*/
+    /*font-weight bold*/
+    /*line-height 1.3*/
+    /*font-size 1.5em*/
 
-    margin 0 10px 0 0
-    padding 0 1em
-    text-shadow -1px 1px #417cb8
+    /*margin 0 10px 0 0*/
+    /*padding 0 1em*/
+    /*text-shadow -1px 1px #417cb8*/
 
-    &[disabled]
-      opacity .5
+    /*&[disabled]*/
+      /*opacity .5*/
 
-    &:hover:not(&[disabled])
-      background-color #346392
-      text-shadow -1px 1px #27496d
+    /*&:hover:not(&[disabled])*/
+      /*background-color #346392*/
+      /*text-shadow -1px 1px #27496d*/
 
-    &:active
-      background-color #27496d
-      text-shadow -1px 1px #193047
+    /*&:active*/
+      /*background-color #27496d*/
+      /*text-shadow -1px 1px #193047*/
 
   button
   input
@@ -78,3 +80,11 @@ body {
 
   p, li
     max-width 42em
+    display inline
+    margin-right 1em
+
+  table
+    button
+      border : none
+    select
+      display : inline

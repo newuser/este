@@ -1,13 +1,15 @@
 export default {
   footer: {
-    madeByHtml: `made by <a href="https://twitter.com/steida">steida</a>`
+    madeByHtml: `made by newUser , based on <a href="https://twitter.com/steida">steida</a>`
   },
   header: {
     examples: 'Examples',
-    h1Html: `<a href="https://github.com/este/este">Este.js</a> App`,
+    h1Html: `Scheduling Lessons App`,
     home: 'Home',
     login: 'Login',
-    me: 'Me (protected)',
+    me: 'Profile',
+    students: 'students',
+    calendar: 'calendar',
     todos: 'Todos'
   }
 };

@@ -4,6 +4,9 @@ import Logout from '../auth/logout.react';
 import React from 'react';
 import requireAuth from '../auth/requireauth.react';
 import {format} from '../intl/store';
+import {Calendar} from 'react-widgets';
+import Griddle from 'griddle-react';
+import DayComponent from './day.react.js';
 
 @requireAuth
 export default class Index extends Component {
@@ -17,24 +20,15 @@ export default class Index extends Component {
   render() {
     const {actions, msg, users: {viewer: {email}}} = this.props;
 
-
     return (
       <DocumentTitle title={msg.me.title}>
         <div className="me-page">
-
-          <p>{format(msg.me.welcome, {email})}</p>
-
           <Logout {...{actions, msg}} />
 
-          <p> Вы можете здесь поменять ваши данные</p>
+          <p> Your schedule</p>
 
-          <form>
-            <label>Your email</label>
-            <input type="text" id="emailInput" ></input>
-            <button class="button button-primary"> {msg.me.save}</button>
-          </form>
-
-
+          <Calendar dayComponent={DayComponent}/>
+          <br/>
         </div>
 
       </DocumentTitle>

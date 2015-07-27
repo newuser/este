@@ -5,7 +5,7 @@ var nconf = require('nconf');
 nconf.env('__');
 
 var config = {
-  appLocales: ['en', 'fr'],
+  appLocales: ['en', 'ru'],
   defaultLocale: 'en',
   googleAnalyticsId: 'UA-XXXXXXX-X',
   isProduction: process.env.NODE_ENV === 'production',
