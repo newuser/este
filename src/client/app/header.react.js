@@ -16,13 +16,13 @@ export default class Header extends Component {
 
     return (
       <header >
-        <div class="row">
-          <div class="one-third column">
+        <div className="row">
+          <div className="one-third column">
             <h1>
               <FormattedHTMLMessage message={header.h1Html}/>
             </h1>
           </div>
-          <div class="two-thirds column">
+          <div className="two-thirds column">
             <ul>
               <li><Link to="home">{header.home}</Link></li>
               {/*<li><Link to="todos">{header.todos}</Link></li>*/}

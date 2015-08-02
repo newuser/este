@@ -5,8 +5,11 @@ import React from 'react';
 import requireAuth from '../auth/requireauth.react';
 import {format} from '../intl/store';
 import Griddle from 'griddle-react';
+import moment from 'moment';
 
-@requireAuth
+// should actio
+
+//@requireAuth
 export default class Index extends Component {
 
   static propTypes = {
@@ -15,29 +18,65 @@ export default class Index extends Component {
     users: React.PropTypes.object.isRequired
   };
 
+  constructor() {
 
-  render() {
-    const {actions, msg, users: {viewer: {email}}} = this.props;
-    var fakeData = [
-      {
-        "Время": "8:00",
-        "Занятие": "вышка",
-        "препод": "teacher1"
-      },
-      {
-        "Время": "9:45",
-        "Занятие": "физика",
-        "препод": "teacher2"
-      }
+    super();
+    var today = moment();
+    var todayStr = today.format('dddd, MMMM Do YYYY');
+    var fakeData = {};
+    fakeData[todayStr] =
+    [
+        {
+          'номер': '1',
+          'Занятие': 'вышка',
+          'Тип': 'лекция',
+          'препод': 'teacher1'
+        },
+        {
+          'номер': '2',
+          'Занятие': 'вышка',
+          'Тип': 'практика',
+          'препод': 'teacher1'
+        },
+        {
+          'номер': '3',
+          'Занятие': 'физика',
+          'Тип': 'лекция',
+          'препод': 'teacher2'
+        }
     ];
+
+    this.currentDay = new Date();
+    this.state = {
+      schedule: fakeData,
+      currentDay: today,
+      currentDayStr: todayStr
+    };
+  }
+
+  yesterday = (date) => {
+    var new_day = this.state.currentDay.subtract(1, 'days');
+    this.setState({currentDay: new_day, currentDayStr: new_day.format('dddd, MMMM Do YYYY')});
+  };
+
+  tomorrow = (date) => {
+    var new_day = this.state.currentDay.add(1, 'days');
+    this.setState({currentDay: new_day, currentDayStr: new_day.format('dddd, MMMM Do YYYY')});
+  };
+  render() {
+    const {actions, msg} = this.props;
+
+    //<div className=" one column"><button className='button button-small' click={clickWeek}>{msg.lessons.nextWeek}</button></div>
     return (
-      <DocumentTitle title={msg.me.title}>
-        <div className="me-page">
-          <Logout {...{actions, msg}} />
+      <DocumentTitle title={msg.lessons.title}>
+        <div className="container">
+          <div className="row">
+            <div className=" one column"><button className='button button-small' onClick={this.yesterday}>{msg.lessons.yesterday}</button></div>
+            <div className=" six columns"> {this.state.currentDayStr}</div>
+            <div className=" one column"><button className='button button-small' onClick={this.tomorrow}>{msg.lessons.tomorrow}</button></div>
+          </div>
 
-          <p> Day timeline</p>
-
-          <Griddle results={fakeData} showFilter={true} useGriddleStyles={false}/>
+          <Griddle results={this.state.schedule[this.state.currentDayStr]} useGriddleStyles={false}/>
           <br/>
         </div>
 
