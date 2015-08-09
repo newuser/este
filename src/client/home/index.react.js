@@ -10,7 +10,7 @@ export default class Index extends Component {
 
   static propTypes = {
     msg: React.PropTypes.object.isRequired
-  };
+  }
 
 
 
